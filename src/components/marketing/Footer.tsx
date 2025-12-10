@@ -9,7 +9,6 @@ import type { LucideIcon } from "lucide-react";
 import { docsSource } from "@/lib/content";
 
 import {
-  DiscordIcon,
   GitHubIcon,
   InstagramIcon,
 } from "@/components/shared/icons";
