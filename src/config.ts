@@ -4,7 +4,7 @@ export const GITHUB_URL = "https://github.com/ebikerepair";
 export const INSTAGRAM_URL = "https://www.instagram.com/ebikerepair.eu";
 
 export const DOCS_GITHUB_OWNER = "ebikerepair";
-export const DOCS_GITHUB_REPO = "ebikerepair.github.io";
+export const DOCS_GITHUB_REPO = "docs-dev";
 export const DOCS_GITHUB_BRANCH = "main";
 
 export const SITE_HOST = process.env.NEXT_PUBLIC_SITE_HOST || "localhost:3000";
