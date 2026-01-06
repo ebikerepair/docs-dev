@@ -1,0 +1,203 @@
+---
+title: Compatibility
+description: See if your bike is suitable for a conversion.
+icon: MessageCircleQuestionMark
+authors:
+  - Kim
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
+
+
+<Steps>
+<Step>
+### Can I use the battery and display with the new motor?
+
+<Callout type="warning">If you switch your motor, it is **always** necessary to also switch battery and display.</Callout>
+
+This is due to the manufacturers' proprietary battery protocols and the requirements of the new motor. For example, it may only accept a battery with a voltage of 48V, while your old battery only delivers 36V. Or the motor might require more power than the current battery could deliver anyway.
+</Step>
+
+<Step>
+### Is my motor convertible?
+
+<Callout>That depends on how deeply the current motor is integrated into the existing frame.</Callout>
+
+<Tabs items={['Bosch', 'Shimano', 'Yamaha', 'Bafang']}>
+  <Tab value="Bosch">
+    <Cards className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Card>
+        <ImageZoom className="object-cover rounded-xl relative aspect-square -mt-1"
+          width="1000" height="1000" alt="" src="/compatibility/bosch-supported.png">
+        </ImageZoom>
+
+        <Callout type="success">Fully supported</Callout>
+
+        - Wide open mount
+        - No protruding aluminium parts
+        - Suitable hole pattern
+        - Generic contour
+
+        **Difficulty:**\
+        `Easy – Normal`
+
+        You can easily follow the installation guide to convert your motor.
+      </Card>
+
+      <Card>
+        <ImageZoom className="object-cover rounded-xl relative aspect-square -mt-1"
+          width="1000" height="1000" alt="" src="/compatibility/bosch-tweaking.png">
+        </ImageZoom>
+
+        <Callout type="warning">Some tweaking</Callout>
+
+        - Mostly open mount
+        - Some protruding aluminium-parts
+        - Suitable hole pattern
+
+        **Difficulty:**\
+        `Moderate – Difficult`
+
+        You might have to find some creative ways to install the new motor.
+      </Card>
+
+      <Card>
+        <ImageZoom className="object-cover rounded-xl relative aspect-square -mt-1"
+          width="1000" height="1000" alt="" src="/compatibility/bosch-incompatible.png">
+        </ImageZoom>
+
+        <Callout type="error">Incompatible</Callout>
+
+        - Deeply integrated
+        - Completely covered
+        - Different hole pattern<br/><br/>
+
+        **Difficulty:**\
+        `Hard – Impossible`
+
+        Good luck! 😅
+      </Card>
+    </Cards>
+
+    <Callout title="Supported Bosch Motors:" type="success">
+      Generation 2 (BES2):
+      - Active Line and Active Line Plus
+      - Performance Line (Cruise, Speed, Cargo, ...)
+
+      Generation 3 (BES2):
+      - Performance Line (Speed)
+    </Callout>
+
+    <Callout title="Unsupported Bosch Motors:" type="error">
+      Generation 1 (BES1):
+
+      * Classic Line and Classic Line Plus
+
+      Generation 4 (BES2):
+      - Performance Line CX
+
+      Generation 5 (BES3):
+
+      - Performance Line (CX, Race Edition, Speed, Cargo, SX, SX Speed)
+    </Callout>
+  </Tab>
+  <Tab value="Shimano">
+    <Cards className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Card>
+        <ImageZoom className="object-cover rounded-xl relative aspect-square -mt-1"
+          width="1000" height="1000" alt="" src="/compatibility/shimano-supported.png">
+        </ImageZoom>
+
+        <Callout type="success">Fully supported</Callout>
+
+        - Wide open mount
+        - No protruding aluminium parts
+        - Suitable hole pattern
+        - Generic contour
+
+        **Difficulty:**\
+        `Easy – Normal`
+
+        You can easily follow the installation guide to convert your motor.
+      </Card>
+
+      <Card>
+        <ImageZoom className="object-cover rounded-xl relative aspect-square -mt-1"
+          width="1000" height="1000" alt="" src="/compatibility/shimano-tweaking.png">
+        </ImageZoom>
+
+        <Callout type="warning">Some tweaking</Callout>
+
+        - Mostly open mount
+        - Some protruding aluminium-parts
+        - Suitable hole pattern
+
+        **Difficulty:**\
+        `Moderate – Difficult`
+
+        You might have to find some creative ways to install the new motor.
+      </Card>
+
+      <Card>
+        <ImageZoom className="object-cover rounded-xl relative aspect-square -mt-1"
+          width="1000" height="1000" alt="" src="/compatibility/shimano-incompatible.png">
+        </ImageZoom>
+
+        <Callout type="error">Incompatible</Callout>
+
+        - Deeply integrated
+        - Completely covered
+        - Different hole pattern<br/><br/>
+
+        **Difficulty:**\
+        `Hard – Impossible`
+
+        Good luck! 😅
+      </Card>
+    </Cards>
+
+    <Callout title="Supported Shimano Motors:" type="success">
+      * E5000
+      * E6100 (Cargo, Speed, ...)
+      * E7000
+      * E8000
+      * EP8, EP800 (Cargo, Speed, RS, ...)
+      * EP801 (Cargo)
+      * EP6, EP600 (Cargo)
+    </Callout>
+
+    <Callout title="Unsupported Shimano Motors:" type="error">
+      * E6000
+      * E6050
+    </Callout>
+  </Tab>
+  <Tab value="Yamaha">
+  </Tab>
+  <Tab value="Bafang">
+    <Callout title="Supported Bafang Motors:" type="success">
+      * M410
+      * M500
+      * M600
+      * M510 (RS)
+      * M560 (RS)
+    </Callout>
+
+    <Callout title="Unsupported Bafang Motors:" type="error">
+      Any that is not listed as "supported".
+    </Callout>
+  </Tab>
+</Tabs>
+
+If your contour slightly differs or you have a specific project in mind, feel free to [contact us](https://www.ebikerepair.eu/kontakt-kit/)!
+</Step>
+
+<Step>
+### Is my battery convertible?
+
+<Callout>When switching brands, you **always** have to replace (or modify) the battery.</Callout>
+
+First it comes down to which type of downtube you have and how the battery is mounted:
+
+</Step>
+</Steps>
