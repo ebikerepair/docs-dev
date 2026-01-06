@@ -12,8 +12,8 @@ import { SafeLink } from "./SafeLink";
 import {
   GitHubIcon,
   InstagramIcon,
-  YouTubeIcon,
   MailIcon,
+  YouTubeIcon,
 } from "@/components/shared/icons";
 import {
   HoverCard,
@@ -144,9 +144,7 @@ export const Person: FunctionComponent<PersonProps> = ({
                   </SafeLink>
                 )}
                 {a.data.socials?.mail && (
-                  <a
-                    href={`mailto:${a.data.socials.mail}`}
-                  >
+                  <a href={`mailto:${a.data.socials.mail}`}>
                     <MailIcon className="size-5" />
                   </a>
                 )}

@@ -10,15 +10,15 @@ import type { MDXComponents } from "mdx/types";
 import { Mermaid } from "./components/mdx/Mermaid";
 import * as ShowcaseComponents from "./components/mdx/Showcase";
 
-import { cn } from "fumadocs-ui/utils/cn";
+// import { cn } from "fumadocs-ui/utils/cn";
 
-import {
-  Info,
-  AlertTriangle,
-  AlertCircle,
-  CheckCircle2,
-  Lightbulb,
-} from "lucide-react";
+// import {
+//   Info,
+//   AlertTriangle,
+//   AlertCircle,
+//   CheckCircle2,
+//   Lightbulb,
+// } from "lucide-react";
 
 // type CalloutType = "info" | "warning" | "error" | "success" | "idea";
 
