@@ -1,6 +1,0 @@
-{
-  "root": true,
-  "title": "AetherMCU",
-  "description": "Reference implementation of the Aether components.",
-  "icon": "Cpu"
-}
