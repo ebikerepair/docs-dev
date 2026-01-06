@@ -3,16 +3,18 @@ import type { ReactNode } from "react";
 import { cn } from "fumadocs-ui/utils/cn";
 
 export type ShowcasesProps = {
-  cols?: 1 | 2;
+  cols?: 1 | 2 | 3;
   children: ReactNode;
 };
 
-export const Showcases = ({ cols, children }: ShowcasesProps) => {
+export const Showcases = ({ cols = 1, children }: ShowcasesProps) => {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 gap-6 lg:gap-10 my-6 lg:my-8",
-        cols === 2 && "lg:grid-cols-2",
+        "grid gap-6 lg:gap-10 my-6 lg:my-8",
+        cols === 1 && "grid-cols-1",
+        cols === 2 && "grid-cols-1 lg:grid-cols-2",
+        cols === 3 && "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
       )}
     >
       {children}
