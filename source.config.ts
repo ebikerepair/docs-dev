@@ -33,6 +33,7 @@ export const people = defineCollections({
         github: z.optional(z.string()),
         instagram: z.optional(z.string()),
         youtube: z.optional(z.string()),
+        mail: z.optional(z.string()),
       }),
     ),
   }),

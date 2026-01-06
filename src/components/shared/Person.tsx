@@ -13,6 +13,7 @@ import {
   GitHubIcon,
   InstagramIcon,
   YouTubeIcon,
+  MailIcon,
 } from "@/components/shared/icons";
 import {
   HoverCard,
@@ -141,6 +142,13 @@ export const Person: FunctionComponent<PersonProps> = ({
                   >
                     <YouTubeIcon className="size-5" />
                   </SafeLink>
+                )}
+                {a.data.socials?.mail && (
+                  <a
+                    href={`mailto:${a.data.socials.mail}`}
+                  >
+                    <MailIcon className="size-5" />
+                  </a>
                 )}
               </div>
             )}
