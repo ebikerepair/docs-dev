@@ -65,10 +65,10 @@ export const Callout = forwardRef<HTMLDivElement, CalloutProps>(
       type === "warn" ? "warning" : type === "tip" ? "info" : type;
     const bg = CALLOUT_BACKGROUND[resolvedType];
 
-    const calloutStyle: CSSProperties = {
-      "--callout-color": `var(--color-fd-${resolvedType}, var(--color-fd-muted))`,
+    const calloutStyle = {
       ...(style ?? {}),
-    };
+      "--callout-color": `var(--color-fd-${resolvedType}, var(--color-fd-muted))`,
+    } as CSSProperties;
 
     return (
       <div
