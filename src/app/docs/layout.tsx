@@ -7,6 +7,7 @@ import { SITE_NAME } from "@/config";
 import { linkItems } from "@/config.layout";
 
 import { LogoText } from "@/components/shared/Logo";
+import { SingleOpenSidebarFolder } from "@/components/docs/SingleOpenSidebarFolder";
 import { metadataGenerator } from "@/lib/util/metadata";
 
 export default function Layout({ children }: LayoutProps<"/docs">) {
@@ -16,6 +17,9 @@ export default function Layout({ children }: LayoutProps<"/docs">) {
       links={linkItems.filter((item) => item.type === "icon")}
       nav={{ title: <LogoText /> }}
       sidebar={{
+        components: {
+          Folder: SingleOpenSidebarFolder,
+        },
         tabs: {
           transform: (option, node) => {
             const meta = docsSource.getNodeMeta(node);

@@ -43,14 +43,14 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
       lastUpdate={
         page.data.lastModified ? new Date(page.data.lastModified) : undefined
       }
-      tableOfContent={{ style: "clerk" }}
+      tableOfContent={{ style: "clerk", single: false }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription className="mb-0">
-        {page.data.description}
+        {/* {page.data.description} */}
 
         {page.data.authors.length > 0 && (
-          <span className="text-xs text-fd-muted-foreground pt-2 flex items-center gap-2">
+          <span className="text-xs text-fd-muted-foreground flex items-center gap-2">
             <span className="font-semibold">Written by</span>
             <span className="flex items-center gap-[0.1rem]">
               {page.data.authors.map((author, i) => (
@@ -70,11 +70,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
           <CopyMarkdownButton markdownUrl={mdxUrl} />
         </div>
 
-        <div className="flex flex-row gap-2 items-center">
+        {/* <div className="flex flex-row gap-2 items-center">
           <EditOnGitHub
             href={`https://github.com/${DOCS_GITHUB_OWNER}/${DOCS_GITHUB_REPO}/edit/${DOCS_GITHUB_BRANCH}/${page.absolutePath}`}
           />
-        </div>
+        </div> */}
       </div>
 
       <DocsBody className="docs-body">
