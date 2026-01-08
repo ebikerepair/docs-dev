@@ -38,12 +38,13 @@ export function ImageZoomWithCaption({
     };
 
     const content = ZoomContent ? ZoomContent(data) : fallbackContent();
+    const resolvedContent = content ?? data.img ?? <span />;
 
-    if (!inferredCaption) return content;
+    if (!inferredCaption) return resolvedContent;
 
     return (
       <div className="flex h-full w-full flex-col items-center justify-center gap-2">
-        {content ?? data.img}
+        {resolvedContent}
         {data.buttonUnzoom}
         <p className="pointer-events-none z-10 max-w-[90vw] text-center text-sm text-black dark:text-white drop-shadow-md">
           {inferredCaption}
