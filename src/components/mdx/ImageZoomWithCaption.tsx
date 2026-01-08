@@ -1,7 +1,7 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { cloneElement } from "react";
+import type { CSSProperties, ReactElement, ReactNode } from "react";
+import { cloneElement, isValidElement } from "react";
 
 import {
   ImageZoom,
@@ -11,6 +11,10 @@ import {
 import type { UncontrolledProps } from "react-medium-image-zoom";
 
 type ImageZoomWithCaptionProps = ImageZoomProps & { caption?: ReactNode };
+type ZoomImageProps = {
+  className?: string;
+  style?: CSSProperties;
+};
 
 export function ImageZoomWithCaption({
   caption,
@@ -22,10 +26,10 @@ export function ImageZoomWithCaption({
   const ZoomContent = rmiz?.ZoomContent;
 
   const zoomContentWithCaption: UncontrolledProps["ZoomContent"] = (data) => {
-    const baseImg = data.img as React.ReactElement | null;
+    const baseImg = data.img as ReactElement<ZoomImageProps> | null;
 
     const fallbackContent = () => {
-      if (!baseImg) return null;
+      if (!baseImg || !isValidElement(baseImg)) return null;
       const { props: imgProps } = baseImg;
       return cloneElement(baseImg, {
         className: `${imgProps.className ?? ""} max-w-full h-auto`,
