@@ -9,17 +9,11 @@ import {
   DocsDescription,
   DocsPage,
   DocsTitle,
-  EditOnGitHub,
 } from "fumadocs-ui/page";
 
 import { DotIcon } from "lucide-react";
 
 import { docsSource, getDocsMdxPath } from "@/lib/content";
-import {
-  DOCS_GITHUB_BRANCH,
-  DOCS_GITHUB_OWNER,
-  DOCS_GITHUB_REPO,
-} from "@/config";
 import { getMDXComponents } from "@/mdx-components";
 
 import { AiActions, CopyMarkdownButton } from "@/components/docs/PageActions";

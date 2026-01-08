@@ -1,17 +1,20 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import type * as PageTree from "fumadocs-core/page-tree";
-import Link from "fumadocs-core/link";
-import { usePathname } from "fumadocs-core/framework";
-
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "fumadocs-ui/components/ui/collapsible";
-import { ChevronDown } from "fumadocs-ui/internal/icons";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "fumadocs-ui/components/ui/collapsible";
 import { useTreePath } from "fumadocs-ui/contexts/tree";
+import { ChevronDown } from "fumadocs-ui/internal/icons";
 import { cn } from "fumadocs-ui/utils/cn";
 import { isActive } from "fumadocs-ui/utils/is-active";
+import { usePathname } from "fumadocs-core/framework";
+import Link from "fumadocs-core/link";
+import type * as PageTree from "fumadocs-core/page-tree";
 
 const OPEN_EVENT = "fd-sidebar-folder-open";
 
@@ -36,7 +39,7 @@ function getFolderKey(item: PageTree.Folder, level: number) {
 function dispatchOpen(level: number, key: string) {
   if (typeof window === "undefined") return;
   window.dispatchEvent(
-    new CustomEvent<OpenEventDetail>(OPEN_EVENT, { detail: { level, key } })
+    new CustomEvent<OpenEventDetail>(OPEN_EVENT, { detail: { level, key } }),
   );
 }
 
@@ -53,11 +56,20 @@ export function SingleOpenSidebarFolder({
   const path = useTreePath();
   const key = getFolderKey(item, level);
   const inPath = path.includes(item);
+  const hasFolderInPath = path.some((node) => node.type === "folder");
+  const previousPathname = useRef(pathname);
   const [open, setOpen] = useState(() => inPath || item.defaultOpen === true);
 
   useEffect(() => {
     if (inPath) setOpen(true);
   }, [inPath]);
+
+  useEffect(() => {
+    if (previousPathname.current !== pathname && !hasFolderInPath) {
+      setOpen(false);
+    }
+    previousPathname.current = pathname;
+  }, [pathname, hasFolderInPath]);
 
   useEffect(() => {
     if (!open) return;
@@ -77,13 +89,16 @@ export function SingleOpenSidebarFolder({
     return () => window.removeEventListener(OPEN_EVENT, handler);
   }, [level, key]);
 
-  const chevronClass = cn("ms-auto transition-transform", !open && "-rotate-90");
+  const chevronClass = cn(
+    "ms-auto transition-transform",
+    !open && "-rotate-90",
+  );
   const contentClass = cn(
     "relative",
     level === 1 && [
       "before:content-[''] before:absolute before:w-px before:inset-y-1 before:bg-fd-border before:start-2.5",
       "**:data-[active=true]:before:content-[''] **:data-[active=true]:before:bg-fd-primary **:data-[active=true]:before:absolute **:data-[active=true]:before:w-px **:data-[active=true]:before:inset-y-2.5 **:data-[active=true]:before:start-2.5",
-    ]
+    ],
   );
   const contentStyle = {
     "--sidebar-item-offset": `calc(var(--spacing) * ${(level + 1) * 3})`,
@@ -94,7 +109,7 @@ export function SingleOpenSidebarFolder({
     const itemClass = cn(
       baseItemClass,
       active ? activeItemClass : inactiveItemClass,
-      "w-full"
+      "w-full",
     );
 
     return (

@@ -13,15 +13,8 @@ export function useDocsAccent(): string | undefined {
 }
 
 export function ThemedBody({ children }: { children: ReactNode }) {
-  const mode = useDocsAccent();
-
   return (
-    <body
-      className={cn(
-        "relative flex flex-col min-h-screen",
-        `doc-accent`,
-      )}
-    >
+    <body className={cn("relative flex flex-col min-h-screen", "doc-accent")}>
       <Providers>{children}</Providers>
     </body>
   );

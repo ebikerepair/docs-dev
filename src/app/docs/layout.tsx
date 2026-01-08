@@ -6,8 +6,8 @@ import { docsSource } from "@/lib/content";
 import { SITE_NAME } from "@/config";
 import { linkItems } from "@/config.layout";
 
-import { LogoText } from "@/components/shared/Logo";
 import { SingleOpenSidebarFolder } from "@/components/docs/SingleOpenSidebarFolder";
+import { LogoText } from "@/components/shared/Logo";
 import { metadataGenerator } from "@/lib/util/metadata";
 
 export default function Layout({ children }: LayoutProps<"/docs">) {
