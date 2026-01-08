@@ -1,8 +1,3 @@
 {
-  "pages": [
-    "bosch",
-    "shimano",
-    "bafang",
-    "..."
-  ]
+  "pages": ["bosch", "shimano", "bafang", "..."]
 }
