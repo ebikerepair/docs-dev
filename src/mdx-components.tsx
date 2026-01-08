@@ -1,5 +1,5 @@
-import * as TabsComponents from "fumadocs-ui/components/tabs";
 import type { ImageZoomProps } from "fumadocs-ui/components/image-zoom";
+import * as TabsComponents from "fumadocs-ui/components/tabs";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 
 import type { MDXComponents } from "mdx/types";

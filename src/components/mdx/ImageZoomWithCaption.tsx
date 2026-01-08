@@ -63,10 +63,5 @@ export function ImageZoomWithCaption({
     children: props.children ?? null,
   };
 
-  return (
-    <ImageZoom
-      {...props}
-      rmiz={rmizProps}
-    />
-  );
+  return <ImageZoom {...props} rmiz={rmizProps} />;
 }
