@@ -57,13 +57,16 @@ export function ImageZoomWithCaption({
     );
   };
 
+  const rmizProps: UncontrolledProps = {
+    ...(rmiz ?? {}),
+    ZoomContent: zoomContentWithCaption,
+    children: props.children ?? null,
+  };
+
   return (
     <ImageZoom
       {...props}
-      rmiz={{
-        ...rmiz,
-        ZoomContent: zoomContentWithCaption,
-      }}
+      rmiz={rmizProps}
     />
   );
 }
