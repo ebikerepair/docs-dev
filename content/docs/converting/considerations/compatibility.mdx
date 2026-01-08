@@ -1,0 +1,262 @@
+---
+title: Compatibility
+description: See if your ebike or frame can be converted.
+authors:
+- Kim
+---
+
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+The following steps walk you through, which type of frames are suitable for a conversion and what difficulties you will potentially face.
+
+<Steps>
+  <Step>
+    ### Is my motor convertible?
+
+    This mainly depends on how deeply the current motor is integrated into the existing frame. Pick the brand of your motor below, to see the example images for each category.
+
+    <div className="grid grid-cols-3 gap-4">
+      <Callout type="success">**Fully supported**</Callout>
+      <Callout type="warning">**Some tweaking**</Callout>
+      <Callout type="error">**Incompatible**</Callout>
+    </div>
+
+    <Cards className="grid grid-cols-3 gap-4 -mt-4">
+      <Card>
+        - Wide open mount
+        - No protruding aluminium parts
+        - Suitable hole pattern
+        - Generic contour
+
+        **Difficulty:**\
+        `Easy – Normal`
+
+        You can easily follow the installation guide to convert your motor.
+      </Card>
+
+      <Card>
+        - Mostly open mount
+        - Some protruding aluminium-parts
+        - Suitable hole pattern
+
+        **Difficulty:**\
+        `Moderate – Difficult`
+
+        You might have to find some creative ways to install the new motor.
+      </Card>
+
+      <Card>
+        - Deeply integrated
+        - Completely covered
+        - Different hole pattern<br/><br/>
+
+        **Difficulty:**\
+        `Hard – Impossible`
+
+        Good luck! 😅
+      </Card>
+    </Cards>
+    <Tabs items={['Bosch', 'Shimano', 'Yamaha', 'Bafang']}>
+      <Tab value="Bosch">
+        <div className="grid grid-cols-3 gap-4">
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
+            width="1000" height="1000" alt="Bosch motor mount fully supported" caption="Bosch motor mount fully supported" src="/compatibility/motor-bosch-supported.png">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
+            width="1000" height="1000" alt="Bosch motor mount needs tweaks" caption="Bosch motor mount needs tweaks" src="/compatibility/motor-bosch-tweaking.png">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
+            width="1000" height="1000" alt="Bosch motor mount incompatible" caption="Bosch motor mount incompatible" src="/compatibility/motor-bosch-incompatible.png">
+          </ImageZoomWithCaption >
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <Callout title="Supported Bosch motors:" type="success">
+            Generation 2 (BES2):
+            - Active Line and Active Line Plus
+            - Performance Line (Cruise, Speed, Cargo, ...)
+
+            Generation 3 (BES2):
+            - Performance Line (Speed)
+          </Callout>
+
+          <Callout title="Unsupported Bosch motors:" type="error">
+            Generation 1 (BES1):
+
+            * Classic Line and Classic Line Plus
+
+            Generation 4 (BES2):
+            - Performance Line CX
+
+            Generation 5 (BES3):
+
+            - Performance Line (CX, Race Edition, Speed, Cargo, SX, SX Speed)
+          </Callout>
+        </div>
+      </Tab>
+      <Tab value="Shimano">
+        <div className="grid grid-cols-3 gap-4">
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
+            width="1000" height="1000" alt="Shimano motor mount fully supported" caption="Shimano motor mount fully supported" src="/compatibility/motor-shimano-supported.png">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
+            width="1000" height="1000" alt="Shimano motor mount needs tweaks" caption="Shimano motor mount needs tweaks" src="/compatibility/motor-shimano-tweaking.png">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
+            width="1000" height="1000" alt="Shimano motor mount incompatible" caption="Shimano motor mount incompatible" src="/compatibility/motor-shimano-incompatible.png">
+          </ImageZoomWithCaption >
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <Callout title="Supported Shimano motors:" type="success">
+            * E5000
+            * E6100 (Cargo, Speed, ...)
+            * E7000
+            * E8000
+            * EP8, EP800 (Cargo, Speed, RS, ...)
+            * EP801 (Cargo)
+            * EP6, EP600 (Cargo)
+          </Callout>
+
+          <Callout title="Unsupported Shimano motors:" type="error">
+            * E6000
+            * E6050
+          </Callout>
+        </div>
+      </Tab>
+      <Tab value="Yamaha">
+        <div className="grid grid-cols-2 gap-4">
+          <Callout title="Experimantally supported Yamaha motors:" type="warning">
+            * Giant SyncDrive
+            * PW-C2
+            * PW-CE
+            * PW-SE
+            * PW-ST
+            * PW-TE
+
+            See [Available Kits](http://localhost:3000/docs/available-kits)
+          </Callout>
+          <Callout title="Unsupported Yamaha motors:" type="error">
+            Any that is not listed as "supported".
+          </Callout>
+        </div>
+      </Tab>
+      <Tab value="Bafang">
+        <div className="grid grid-cols-2 gap-4">
+          <Callout title="Supported Bafang motors:" type="success">
+            * M410
+            * M500
+            * M600
+            * M510 (RS)
+            * M560 (RS)
+            * M620
+            * M630
+          </Callout>
+
+          <Callout title="Unsupported Bafang Motors:" type="error">
+            Any that is not listed as "supported".
+          </Callout>
+        </div>
+      </Tab>
+    </Tabs>
+
+    If your contour slightly differs or you have a specific project in mind, feel free to [contact us](https://www.ebikerepair.eu/kontakt-kit/)!
+  </Step>
+
+  <Step>
+    ### Is my battery convertible?
+
+    <Callout>When switching brands, you **always** have to replace (or modify) the battery.</Callout>
+
+    First it comes down to which type of downtube you have and how the battery is mounted:
+
+    <div className="grid grid-cols-3 gap-4">
+      <Callout type="success">**Recommended**</Callout>
+      <Callout type="info">**Some tweaking**</Callout>
+      <Callout type="warning">**Complicated**</Callout>
+    </div>
+
+    <Cards className="grid grid-cols-3 gap-4 -mt-4">
+      <Card>
+        - Battery is installed onto downtube
+        - Lofty frame triangle / high toptube
+        - No protruding aluminium-parts
+        - Pick hardtail over fully
+
+        **Difficulty:**\
+        `Easy – Normal`
+      </Card>
+
+      <Card>
+        - Battery is installed on top of downtube
+        - Some protruding aluminium-parts
+        - Small frame triangle / low toptube
+
+        **Difficulty:**\
+        `Moderate – Difficult`
+      </Card>
+
+      <Card>
+        - Deeply integrated
+        - Completely covered
+        - Different hole pattern<br/><br/>
+
+        **Difficulty:**\
+        `Hard – Impossible`
+
+        Good luck! 😅
+      </Card>
+    </Cards>
+
+    <Tabs items={['Bosch', 'Shimano', 'Yamaha', 'Bafang']}>
+      <Tab value="Bosch">
+        <div className="grid grid-cols-3 gap-4">
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
+            width="1000" height="1000" src="/compatibility/battery-bosch-recommended.png" alt="Bosch battery mounting recommended" caption="Bosch battery mounting recommended">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
+            width="1000" height="1000" src="/compatibility/battery-bosch-tweaking.png" alt="Bosch battery mounting needs tweaks" caption="Bosch battery mounting needs tweaks">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
+            width="1000" height="1000" src="/compatibility/battery-bosch-incompatible.png" alt="Bosch battery mounting incompatible" caption="Bosch battery mounting incompatible">
+          </ImageZoomWithCaption >
+        </div>
+      </Tab>
+      <Tab value="Shimano">
+        <div className="grid grid-cols-3 gap-4">
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
+            width="1000" height="1000" src="/compatibility/battery-shimano-recommended.png" alt="Shimano battery mounting recommended" caption="Shimano battery mounting recommended">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
+            width="1000" height="1000" src="/compatibility/battery-shimano-tweaking.png" alt="Shimano battery mounting needs tweaks" caption="Shimano battery mounting needs tweaks">
+          </ImageZoomWithCaption >
+          <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
+            width="1000" height="1000" src="/compatibility/battery-shimano-incompatible.png" alt="Shimano battery mounting incompatible" caption="Shimano battery mounting incompatible">
+          </ImageZoomWithCaption >
+        </div>
+      </Tab>
+      <Tab value="Yamaha">
+      </Tab>
+      <Tab value="Bafang">
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step>
+    ### Can I use the battery and display with the new motor?
+
+    <Callout type="warning">If you switch your motor, it is **always** necessary to also switch battery and display.</Callout>
+
+    This is due to the manufacturers' proprietary battery protocols and the requirements of the new motor. For example, it may only accept a battery with a voltage of 48V, while your old battery only delivers 36V. Or the motor might require more power than the current battery could deliver anyway.
+  </Step>
+</Steps>
+
+<div className="grid grid-cols-4 gap-4">
+  <Callout type="info">Info</Callout>
+  <Callout type="success">Fully supported</Callout>
+  <Callout type="warning">Some tweaking</Callout>
+  <Callout type="error">Incompatible</Callout>
+  <Callout type="idea">Idea</Callout>
+  <Callout type="answer">Answer</Callout>
+  <Callout type="question">Question</Callout>
+</div>
