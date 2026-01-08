@@ -19,7 +19,7 @@ export function ThemedBody({ children }: { children: ReactNode }) {
     <body
       className={cn(
         "relative flex flex-col min-h-screen",
-        mode && `doc-accent-${mode}`,
+        `doc-accent`,
       )}
     >
       <Providers>{children}</Providers>
