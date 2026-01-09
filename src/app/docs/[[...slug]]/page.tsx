@@ -16,6 +16,7 @@ import { DotIcon } from "lucide-react";
 import { docsSource, getDocsMdxPath } from "@/lib/content";
 import { getMDXComponents } from "@/mdx-components";
 
+import { Callout } from "@/components/mdx/CalloutGB";
 import { AiActions, CopyMarkdownButton } from "@/components/docs/PageActions";
 import { PageLink } from "@/components/docs/PageLink";
 import { Person } from "@/components/shared/Person";
@@ -70,6 +71,11 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
           />
         </div> */}
       </div>
+
+      <Callout type="warning" className="md:hidden">
+        For better readability, it is recommended to view this page on a device
+        with a wide screen, such as a laptop or tablet.
+      </Callout>
 
       <DocsBody className="docs-body">
         <MDX
