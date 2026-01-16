@@ -16,14 +16,11 @@ The following steps walk you through, which type of frames are suitable for a co
 
     This mainly depends on how deeply the current motor is integrated into the existing frame. Pick the brand of your motor below, to see the example images for each category.
 
-    <div className="grid grid-cols-3 gap-4">
-      <Callout type="success">**Fully supported**</Callout>
-      <Callout type="warning">**Some tweaking**</Callout>
-      <Callout type="error">**Incompatible**</Callout>
-    </div>
-
-    <Cards className="grid grid-cols-3 gap-4 -mt-4">
+    <Cards className="grid grid-cols-1 gap-4 md:grid-cols-3">
       <Card>
+        <div className="-mx-4">
+          <Callout type="success" className="-mt-5">**Fully supported**</Callout>
+        </div>
         - Wide open mount
         - No protruding aluminium parts
         - Suitable hole pattern
@@ -36,6 +33,9 @@ The following steps walk you through, which type of frames are suitable for a co
       </Card>
 
       <Card>
+        <div className="-mx-4">
+          <Callout type="warning" className="-mt-5">**Some tweaking**</Callout>
+        </div>
         - Mostly open mount
         - Some protruding aluminium-parts
         - Suitable hole pattern
@@ -47,6 +47,9 @@ The following steps walk you through, which type of frames are suitable for a co
       </Card>
 
       <Card>
+        <div className="-mx-4">
+          <Callout type="error" className="-mt-5">**Incompatible**</Callout>
+        </div>
         - Deeply integrated
         - Completely covered
         - Different hole pattern<br/><br/>
@@ -59,7 +62,7 @@ The following steps walk you through, which type of frames are suitable for a co
     </Cards>
     <Tabs items={['Bosch', 'Shimano', 'Yamaha', 'Bafang']}>
       <Tab value="Bosch">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
             width="1000" height="1000" alt="Bosch motor mount fully supported" caption="Bosch motor mount fully supported" src="/compatibility/motor-bosch-supported.png">
           </ImageZoomWithCaption >
@@ -71,8 +74,8 @@ The following steps walk you through, which type of frames are suitable for a co
           </ImageZoomWithCaption >
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <Callout title="Supported Bosch motors:" type="success">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <Callout title="Supported Bosch motors:" type="success">
             Generation 2 (BES2):
             - Active Line and Active Line Plus
             - Performance Line (Cruise, Speed, Cargo, ...)
@@ -96,7 +99,7 @@ The following steps walk you through, which type of frames are suitable for a co
         </div>
       </Tab>
       <Tab value="Shimano">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-80"
             width="1000" height="1000" alt="Shimano motor mount fully supported" caption="Shimano motor mount fully supported" src="/compatibility/motor-shimano-supported.png">
           </ImageZoomWithCaption >
@@ -108,7 +111,7 @@ The following steps walk you through, which type of frames are suitable for a co
           </ImageZoomWithCaption >
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <Callout title="Supported Shimano motors:" type="success">
             * E5000
             * E6100 (Cargo, Speed, ...)
@@ -126,7 +129,7 @@ The following steps walk you through, which type of frames are suitable for a co
         </div>
       </Tab>
       <Tab value="Yamaha">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <Callout title="Experimantally supported Yamaha motors:" type="warning">
             * Giant SyncDrive
             * PW-C2
@@ -143,7 +146,7 @@ The following steps walk you through, which type of frames are suitable for a co
         </div>
       </Tab>
       <Tab value="Bafang">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <Callout title="Supported Bafang motors:" type="success">
             * M410
             * M500
@@ -171,14 +174,16 @@ The following steps walk you through, which type of frames are suitable for a co
 
     First it comes down to which type of downtube you have and how the battery is mounted:
 
-    <div className="grid grid-cols-3 gap-4">
-      <Callout type="success">**Recommended**</Callout>
-      <Callout type="info">**Some tweaking**</Callout>
-      <Callout type="warning">**Complicated**</Callout>
-    </div>
-
-    <Cards className="grid grid-cols-3 gap-4 -mt-4">
+    <Cards className="grid grid-cols-1 gap-4 md:grid-cols-3">
       <Card>
+        <div className="-mx-4">
+          <Callout
+            type="success"
+            className="-mt-5 !rounded-t-lg !rounded-b-none"
+          >
+            **Recommended**
+          </Callout>
+        </div>
         - Battery is installed onto downtube
         - Lofty frame triangle / high toptube
         - No protruding aluminium-parts
@@ -189,6 +194,14 @@ The following steps walk you through, which type of frames are suitable for a co
       </Card>
 
       <Card>
+        <div className="-mx-4 rounded-t-lg">
+          <Callout
+            type="info"
+            className="-mt-5 !rounded-t-lg !rounded-b-none"
+          >
+            **Some tweaking**
+          </Callout>
+        </div>
         - Battery is installed on top of downtube
         - Some protruding aluminium-parts
         - Small frame triangle / low toptube
@@ -198,6 +211,14 @@ The following steps walk you through, which type of frames are suitable for a co
       </Card>
 
       <Card>
+        <div className="-mx-4 rounded-t-lg">
+          <Callout
+            type="warning"
+            className="-mt-5 !rounded-t-lg !rounded-b-none"
+          >
+            **Complicated**
+          </Callout>
+        </div>
         - Deeply integrated
         - Completely covered
         - Different hole pattern<br/><br/>
@@ -211,7 +232,7 @@ The following steps walk you through, which type of frames are suitable for a co
 
     <Tabs items={['Bosch', 'Shimano', 'Yamaha', 'Bafang']}>
       <Tab value="Bosch">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
             width="1000" height="1000" src="/compatibility/battery-bosch-recommended.png" alt="Bosch battery mounting recommended" caption="Bosch battery mounting recommended">
           </ImageZoomWithCaption >
@@ -224,7 +245,7 @@ The following steps walk you through, which type of frames are suitable for a co
         </div>
       </Tab>
       <Tab value="Shimano">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           <ImageZoomWithCaption  className="object-cover rounded-xl relative aspect-square -mt-1 mb-1 h-96"
             width="1000" height="1000" src="/compatibility/battery-shimano-recommended.png" alt="Shimano battery mounting recommended" caption="Shimano battery mounting recommended">
           </ImageZoomWithCaption >
