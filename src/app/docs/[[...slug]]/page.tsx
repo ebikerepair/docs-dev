@@ -4,21 +4,17 @@ import type { Metadata, Route } from "next";
 import { notFound } from "next/navigation";
 import { type ComponentPropsWithoutRef, Fragment } from "react";
 
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from "fumadocs-ui/page";
+import { DocsBody, DocsPage, DocsTitle } from "fumadocs-ui/page";
 
 import { DotIcon } from "lucide-react";
 
 import { docsSource, getDocsMdxPath } from "@/lib/content";
 import { getMDXComponents } from "@/mdx-components";
 
-import { Callout } from "@/components/mdx/CalloutGB";
 import { AiActions, CopyMarkdownButton } from "@/components/docs/PageActions";
 import { PageLink } from "@/components/docs/PageLink";
+import { Callout } from "@/components/mdx/CalloutGB";
+import { DynamicLucideIcon } from "@/components/shared/icons";
 import { Person } from "@/components/shared/Person";
 import { SafeLink } from "@/components/shared/SafeLink";
 import { metadataGenerator } from "@/lib/util/metadata";
@@ -40,24 +36,31 @@ export default async function Page(props: PageProps<"/docs/[[...slug]]">) {
       }
       tableOfContent={{ style: "clerk", single: false }}
     >
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription className="mb-0">
-        {/* {page.data.description} */}
-
-        {page.data.authors.length > 0 && (
-          <span className="text-xs text-fd-muted-foreground flex items-center gap-2">
-            <span className="font-semibold">Written by</span>
-            <span className="flex items-center gap-[0.1rem]">
-              {page.data.authors.map((author, i) => (
-                <Fragment key={author}>
-                  {i > 0 && <DotIcon className="size-3 -mx-0.5" />}
-                  <Person personId={author} />
-                </Fragment>
-              ))}
-            </span>
-          </span>
-        )}
-      </DocsDescription>
+      <DocsTitle className="flex items-center gap-2">
+        {page.data.icon &&
+          (typeof page.data.icon === "string" ? (
+            <DynamicLucideIcon
+              icon={page.data.icon}
+              className="size-6 shrink-0"
+            />
+          ) : (
+            page.data.icon
+          ))}
+        <span>{page.data.title}</span>
+      </DocsTitle>
+      {page.data.authors.length > 0 && (
+        <div className="text-xs text-fd-muted-foreground flex items-center gap-2">
+          <span className="font-semibold">Written by</span>
+          <div className="flex items-center gap-[0.1rem]">
+            {page.data.authors.map((author, i) => (
+              <Fragment key={author}>
+                {i > 0 && <DotIcon className="size-3 -mx-0.5" />}
+                <Person personId={author} />
+              </Fragment>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-row items-center justify-between border-b pb-6">
         <div className="flex flex-row gap-2 items-center">
